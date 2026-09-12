@@ -1,0 +1,32 @@
+# Node / React
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Logs
+*.log
+
+# Hadoop runtime files
+hadoop/logs/
+hadoop/tmp/
+hadoop/data/
+
+# Generated logistics datasets
+data/raw/*
+data/processed/*
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+

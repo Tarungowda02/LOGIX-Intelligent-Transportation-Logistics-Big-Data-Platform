@@ -1,0 +1,398 @@
+/* =========================================================
+   LOGIX — WHAT-IF SIMULATOR
+   ========================================================= */
+
+   .simulator-page {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  
+  .simulator-page .module-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  
+    gap: 24px;
+  
+    margin-bottom: 24px;
+  }
+  
+  .simulator-page .module-breadcrumb {
+    margin-bottom: 12px;
+  
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+  
+    color: #92a0b5;
+  }
+  
+  .simulator-page .module-breadcrumb span {
+    margin: 0 8px;
+    color: #c4cbd5;
+  }
+  
+  .simulator-page .module-header h1 {
+    margin: 0;
+  
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 780;
+  
+    color: #172033;
+  }
+  
+  .simulator-page .module-header p {
+    margin: 7px 0 0;
+  
+    font-size: 14px;
+  
+    color: #8994a6;
+  }
+  
+  /* =========================================================
+     RESET BUTTON
+     ========================================================= */
+  
+  .sim-reset {
+    height: 42px;
+  
+    padding: 0 16px;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 8px;
+  
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+  
+    background: #ffffff;
+    color: #52627a;
+  
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .sim-reset:hover {
+    background: #f7f9fb;
+  }
+  
+  /* =========================================================
+     MAIN LAYOUT
+     ========================================================= */
+  
+  .sim-layout {
+    display: grid;
+  
+    grid-template-columns: 380px minmax(0, 1fr);
+  
+    gap: 20px;
+  }
+  
+  /* =========================================================
+     PANELS
+     ========================================================= */
+  
+  .sim-controls,
+  .sim-results {
+    overflow: hidden;
+  
+    background: #ffffff;
+  
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+  
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .sim-panel-title {
+    min-height: 58px;
+  
+    padding: 18px 20px;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 8px;
+  
+    border-bottom: 1px solid #edf0f4;
+  
+    font-size: 16px;
+    font-weight: 750;
+  
+    color: #172033;
+  }
+  
+  /* =========================================================
+     CONTROL GROUP
+     ========================================================= */
+  
+  .sim-controls label {
+    display: block;
+  
+    padding: 22px 20px;
+  
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .sim-controls label:last-child {
+    border-bottom: none;
+  }
+  
+  .sim-controls label > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    color: #4f5c70;
+  }
+  
+  .sim-controls label > div strong {
+    color: #172033;
+  }
+  
+  /* =========================================================
+     RANGE SLIDERS
+     ========================================================= */
+  
+  .sim-controls input[type="range"] {
+    width: 100%;
+  
+    margin: 18px 0 9px;
+  
+    accent-color: #536fd8;
+  
+    cursor: pointer;
+  }
+  
+  .sim-controls small {
+    display: block;
+  
+    font-size: 10px;
+    line-height: 1.4;
+  
+    color: #98a2b3;
+  }
+  
+  /* =========================================================
+     RESULT GRID
+     ========================================================= */
+  
+  .sim-result-grid {
+    display: grid;
+  
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  
+    gap: 16px;
+  
+    padding: 20px;
+  }
+  
+  .sim-result-card {
+    padding: 20px;
+  
+    background: #f9fafc;
+  
+    border: 1px solid #edf0f4;
+    border-radius: 12px;
+  }
+  
+  .sim-result-icon {
+    width: 36px;
+    height: 36px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin-bottom: 14px;
+  
+    border-radius: 9px;
+  
+    background: #eef3ff;
+    color: #536fd8;
+  }
+  
+  .shield-icon {
+    width: 20px;
+    height: 20px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 50%;
+  
+    background: #fff0f0;
+    color: #c44242;
+  
+    font-size: 12px;
+    font-weight: 800;
+  }
+  
+  .sim-result-card > span {
+    display: block;
+  
+    font-size: 11px;
+    font-weight: 650;
+  
+    color: #7b8799;
+  }
+  
+  .sim-result-card > strong {
+    display: block;
+  
+    margin: 7px 0;
+  
+    font-size: 31px;
+    line-height: 1;
+  
+    font-weight: 800;
+  
+    color: #172033;
+  }
+  
+  .sim-result-card > strong small {
+    font-size: 13px;
+    font-weight: 500;
+  
+    color: #8a95a6;
+  }
+  
+  .sim-result-card > b {
+    font-size: 10px;
+    font-weight: 700;
+  
+    color: #697589;
+  }
+  
+  /* =========================================================
+     RESULT STATUS COLORS
+     ========================================================= */
+  
+  .sim-high {
+    color: #c44242 !important;
+  }
+  
+  .sim-medium {
+    color: #a87400 !important;
+  }
+  
+  .sim-low {
+    color: #238957 !important;
+  }
+  
+  /* =========================================================
+     SIMULATION EXPLANATION
+     ========================================================= */
+  
+  .sim-explanation {
+    margin: 0 20px 20px;
+  
+    padding: 18px;
+  
+    background: #f7f9fb;
+  
+    border-radius: 11px;
+  }
+  
+  .sim-explanation strong {
+    font-size: 14px;
+    font-weight: 750;
+  
+    color: #172033;
+  }
+  
+  .sim-explanation p {
+    margin: 7px 0 0;
+  
+    font-size: 12px;
+    line-height: 1.6;
+  
+    color: #697589;
+  }
+  
+  /* =========================================================
+     RESPONSIVE
+     ========================================================= */
+  
+  @media (max-width: 1000px) {
+    .sim-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .sim-result-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .simulator-page {
+      padding: 20px 14px 30px;
+    }
+  
+    .simulator-page .module-header {
+      flex-direction: column;
+    }
+  
+    .sim-reset {
+      width: 100%;
+    }
+  
+    .sim-result-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* RUN SIMULATION BUTTON */
+
+.sim-run-button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid #182238;
+  border-radius: 10px;
+
+  background: #182238;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sim-run-button:hover {
+  background: #24304a;
+  border-color: #24304a;
+}
+
+.sim-run-button:active {
+  transform: translateY(1px);
+}
+
+.sim-run-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}

@@ -1,0 +1,3495 @@
+/* =========================================================
+   LOGIX — TRANSPORT INTELLIGENCE PLATFORM
+   APP.CSS
+   ========================================================= */
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+   .app-shell {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background: #f5f7fa;
+    color: #172033;
+  }
+  
+  
+  /* =========================================================
+     SIDEBAR
+     ========================================================= */
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 278px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-right: 1px solid #e3e7ed;
+    z-index: 100;
+  }
+  
+  .sidebar-brand {
+    height: 156px;
+    padding: 28px 28px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #172033;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+  }
+  
+  .brand-copy {
+    min-width: 0;
+  }
+  
+  .brand-name {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #172033;
+  }
+  
+  .brand-subtitle {
+    margin-top: 7px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #8a95a6;
+    white-space: nowrap;
+  }
+  
+  .sidebar-section-title {
+    padding: 4px 30px 12px;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    color: #9aa4b3;
+    text-transform: uppercase;
+  }
+  
+  .sidebar-nav {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .sidebar-nav-item {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    background: transparent;
+    color: #69778d;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 650;
+    transition:
+      background 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease;
+  }
+  
+  .sidebar-nav-item svg {
+    flex-shrink: 0;
+  }
+  
+  .sidebar-nav-item:hover {
+    background: #f6f8fb;
+    color: #172033;
+  }
+  
+  .sidebar-nav-item.active {
+    background: #f0f4fa;
+    border-color: #1d6fe8;
+    color: #172033;
+    box-shadow: inset 0 0 0 1px rgba(29, 111, 232, 0.08);
+  }
+  
+  .sidebar-nav-item.active svg {
+    color: #172033;
+  }
+  
+  .sidebar-nav-arrow {
+    margin-left: auto;
+  }
+  
+  .sidebar-bottom {
+    margin-top: auto;
+    padding: 18px 16px 20px;
+  }
+  
+  .sidebar-settings {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #69778d;
+    font-size: 14px;
+    font-weight: 650;
+    text-align: left;
+  }
+  
+  .sidebar-settings:hover {
+    background: #f6f8fb;
+    color: #172033;
+  }
+  
+  .system-status {
+    margin-top: 20px;
+    padding: 13px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e4e8ee;
+    border-radius: 11px;
+    background: #fafbfc;
+  }
+  
+  .system-status-dot {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #2db878;
+    box-shadow: 0 0 0 5px #e3f7ed;
+  }
+  
+  .system-status-text {
+    min-width: 0;
+  }
+  
+  .system-status-title {
+    font-size: 11px;
+    font-weight: 750;
+    color: #354154;
+  }
+  
+  .system-status-subtitle {
+    margin-top: 3px;
+    font-size: 9px;
+    color: #98a2b3;
+  }
+  
+  
+  /* =========================================================
+     MAIN CONTENT
+     ========================================================= */
+  
+  .main-content {
+    min-width: 0;
+    width: calc(100% - 278px);
+    min-height: 100vh;
+    margin-left: 278px;
+    padding: 0;
+  }
+  
+  
+  /* =========================================================
+     GENERIC PAGE
+     ========================================================= */
+  
+  .page-container {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  .page-header {
+    margin-bottom: 24px;
+  }
+  
+  .page-header h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .page-header p {
+    margin: 7px 0 0;
+    font-size: 14px;
+    color: #8994a6;
+  }
+  
+  
+  /* =========================================================
+     GENERIC CARDS
+     ========================================================= */
+  
+  .card {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  
+  /* =========================================================
+     DASHBOARD
+     ========================================================= */
+  
+  .dashboard-page {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 24px;
+  }
+  
+  .dashboard-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .dashboard-header p {
+    margin: 7px 0 0;
+    color: #8994a6;
+    font-size: 14px;
+  }
+  
+  .dashboard-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-kpi-card {
+    min-height: 132px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .dashboard-kpi-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  
+  .dashboard-kpi-label {
+    font-size: 12px;
+    font-weight: 650;
+    color: #7b8799;
+  }
+  
+  .dashboard-kpi-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #f1f4f8;
+    color: #53627a;
+  }
+  
+  .dashboard-kpi-value {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .dashboard-kpi-change {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #8490a2;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+  }
+  
+  .dashboard-card {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .dashboard-card-header {
+    min-height: 70px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .dashboard-card-title {
+    font-size: 15px;
+    font-weight: 720;
+    color: #172033;
+  }
+  
+  .dashboard-card-subtitle {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #9aa4b3;
+  }
+  
+  .dashboard-card-body {
+    padding: 20px;
+  }
+  
+  
+  /* =========================================================
+     SHIPMENTS
+     ========================================================= */
+  
+  .shipments-page {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  .shipments-header {
+    margin-bottom: 24px;
+  }
+  
+  .shipments-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .shipments-header p {
+    margin: 7px 0 0;
+    font-size: 14px;
+    color: #8994a6;
+  }
+  
+  .shipment-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .shipment-summary-card {
+    min-height: 125px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .shipment-summary-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .shipment-summary-label {
+    font-size: 12px;
+    font-weight: 650;
+    color: #7b8799;
+  }
+  
+  .shipment-summary-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #f1f4f8;
+    color: #52627a;
+  }
+  
+  .shipment-summary-value {
+    font-size: 28px;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .shipment-summary-note {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #909aaa;
+  }
+  
+  .shipments-table-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .shipments-table-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .shipments-table-title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .shipments-table-description {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #8994a6;
+  }
+  
+  .shipments-toolbar {
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .shipment-search {
+    width: 280px;
+    height: 40px;
+    padding: 0 13px;
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+    outline: none;
+    color: #172033;
+    background: #ffffff;
+  }
+  
+  .shipment-search:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.1);
+  }
+  
+  .shipments-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .shipments-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+  }
+  
+  .shipments-table th {
+    height: 50px;
+    padding: 0 16px;
+    background: #fafbfc;
+    border-bottom: 1px solid #e7ebf0;
+    text-align: left;
+    color: #6d788a;
+    font-size: 10px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  .shipments-table td {
+    height: 68px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #edf0f4;
+    color: #344054;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  
+  .shipments-table tbody tr:hover {
+    background: #fafbfd;
+  }
+  
+  .shipment-id {
+    font-size: 13px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .shipment-route {
+    font-weight: 650;
+    color: #344054;
+  }
+  
+  .shipment-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .shipment-status-delivered {
+    background: #eaf8f0;
+    color: #238957;
+  }
+  
+  .shipment-status-transit {
+    background: #edf3ff;
+    color: #4169d8;
+  }
+  
+  .shipment-status-delayed {
+    background: #fff0f0;
+    color: #c44242;
+  }
+  
+  .shipment-status-pending {
+    background: #fff7e4;
+    color: #a87500;
+  }
+  
+  
+  /* =========================================================
+     FLEET
+     ========================================================= */
+  
+  .fleet-page {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  .fleet-header {
+    margin-bottom: 24px;
+  }
+  
+  .fleet-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .fleet-header p {
+    margin: 7px 0 0;
+    font-size: 14px;
+    color: #8994a6;
+  }
+  
+  .fleet-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .fleet-summary-card {
+    min-height: 126px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .fleet-summary-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .fleet-summary-label {
+    font-size: 12px;
+    font-weight: 650;
+    color: #7b8799;
+  }
+  
+  .fleet-summary-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #f1f4f8;
+    color: #52627a;
+  }
+  
+  .fleet-summary-value {
+    font-size: 28px;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .fleet-summary-note {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #909aaa;
+  }
+  
+  .fleet-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .fleet-performance-card,
+  .fleet-status-card,
+  .fleet-records-card,
+  .fleet-insight-card {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .fleet-card-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .fleet-card-title {
+    font-size: 15px;
+    font-weight: 720;
+    color: #172033;
+  }
+  
+  .fleet-card-subtitle {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #9aa4b3;
+  }
+  
+  .fleet-card-body {
+    padding: 20px;
+  }
+  
+  .fleet-score {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .fleet-score-value {
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 800;
+    color: #172033;
+  }
+  
+  .fleet-score-value span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #8a95a6;
+  }
+  
+  .fleet-score-description {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #758195;
+  }
+  
+  .fleet-progress {
+    height: 9px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #edf0f4;
+  }
+  
+  .fleet-progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: #35b779;
+  }
+  
+  .fleet-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  
+  .fleet-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .fleet-status-name {
+    font-size: 13px;
+    color: #697589;
+  }
+  
+  .fleet-status-value {
+    font-size: 13px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .fleet-records-card {
+    overflow: hidden;
+  }
+  
+  .fleet-records-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .fleet-records-title {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .fleet-records-description {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #8994a6;
+  }
+  
+  .fleet-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .fleet-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+  }
+  
+  .fleet-table th {
+    height: 50px;
+    padding: 0 16px;
+    background: #fafbfc;
+    border-bottom: 1px solid #e7ebf0;
+    text-align: left;
+    color: #6d788a;
+    font-size: 10px;
+    font-weight: 750;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  .fleet-table td {
+    height: 70px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #edf0f4;
+    font-size: 13px;
+    color: #344054;
+    vertical-align: middle;
+  }
+  
+  .fleet-table tbody tr:hover {
+    background: #fafbfd;
+  }
+  
+  .vehicle-registration {
+    font-size: 13px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .vehicle-type {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #98a2b3;
+  }
+  
+  .vehicle-utilization {
+    min-width: 100px;
+  }
+  
+  .vehicle-utilization-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+  
+  .vehicle-utilization-value {
+    font-weight: 700;
+    color: #52627a;
+  }
+  
+  .vehicle-utilization-bar {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #edf0f4;
+  }
+  
+  .vehicle-utilization-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: #536fd8;
+  }
+  
+  .vehicle-health {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .vehicle-health-good {
+    background: #eaf8f0;
+    color: #238957;
+  }
+  
+  .vehicle-health-warning {
+    background: #fff6df;
+    color: #a87400;
+  }
+  
+  .vehicle-health-critical {
+    background: #fff0f0;
+    color: #c44242;
+  }
+  
+  .fleet-insight-card {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .fleet-insight-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eef3ff;
+    color: #4169d8;
+  }
+  
+  .fleet-insight-title {
+    margin: 0 0 5px;
+    font-size: 15px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .fleet-insight-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #697589;
+  }
+  
+  
+  /* =========================================================
+     ROUTES PAGE
+     ========================================================= */
+  
+  .routes-page {
+    width: 100%;
+    padding: 30px 32px 40px;
+  }
+  
+  .routes-header {
+    margin-bottom: 24px;
+  }
+  
+  .routes-header h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 780;
+    color: #172033;
+  }
+  
+  .routes-header p {
+    margin: 7px 0 0;
+    color: #8994a6;
+    font-size: 14px;
+  }
+  
+  
+  /* =========================================================
+     ROUTE KPI CARDS
+     ========================================================= */
+  
+  .routes-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .route-kpi-card {
+    min-height: 126px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .route-kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  
+  .route-kpi-label {
+    font-size: 13px;
+    font-weight: 650;
+    color: #7a8699;
+  }
+  
+  .route-kpi-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #f1f4f8;
+    color: #52627a;
+  }
+  
+  .route-kpi-value {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .route-kpi-subtitle {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8b96a8;
+  }
+  
+  
+  /* =========================================================
+     ROUTE ANALYTICS PANELS
+     ========================================================= */
+  
+  .routes-analytics-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .route-panel {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .route-panel-header {
+    min-height: 72px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .route-panel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #172033;
+  }
+  
+  .route-panel-subtitle {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #98a2b3;
+  }
+  
+  .route-panel-body {
+    padding: 20px;
+  }
+  
+  
+  /* =========================================================
+     NETWORK PERFORMANCE
+     ========================================================= */
+  
+  .network-score {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 6px 0 20px;
+  }
+  
+  .network-score-number {
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 800;
+    color: #172033;
+    white-space: nowrap;
+  }
+  
+  .network-score-number span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #8a95a6;
+  }
+  
+  .network-score-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .network-score-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #172033;
+  }
+  
+  .network-score-description {
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #7c8798;
+  }
+  
+  .network-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid #edf0f4;
+  }
+  
+  .network-metric {
+    padding: 12px;
+    background: #f7f9fb;
+    border-radius: 10px;
+  }
+  
+  .network-metric-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #7c8798;
+  }
+  
+  .network-metric-value {
+    font-size: 19px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  
+  /* =========================================================
+     RISK DISTRIBUTION
+     ========================================================= */
+  
+  .risk-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .risk-total {
+    min-width: 105px;
+  }
+  
+  .risk-total-value {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 800;
+    color: #172033;
+  }
+  
+  .risk-total-label {
+    margin-top: 7px;
+    font-size: 12px;
+    color: #8a95a6;
+  }
+  
+  .risk-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  
+  .risk-row {
+    display: grid;
+    grid-template-columns: 82px minmax(80px, 1fr) 50px;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .risk-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4f5c70;
+  }
+  
+  .risk-bar {
+    height: 8px;
+    overflow: hidden;
+    background: #edf0f4;
+    border-radius: 20px;
+  }
+  
+  .risk-bar-fill {
+    height: 100%;
+    border-radius: 20px;
+  }
+  
+  .risk-bar-low {
+    background: #35b779;
+  }
+  
+  .risk-bar-moderate {
+    background: #e7ad32;
+  }
+  
+  .risk-bar-high {
+    background: #e05252;
+  }
+  
+  .risk-percentage {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5e6a7c;
+    text-align: right;
+  }
+  
+  
+  /* =========================================================
+     ROUTE PERFORMANCE
+     ========================================================= */
+  
+  .route-performance-card {
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .route-performance-header {
+    padding: 22px 24px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .route-performance-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .route-performance-description {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #8a95a6;
+  }
+  
+  .route-toolbar {
+    min-height: 70px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #edf0f4;
+  }
+  
+  .route-search-wrapper {
+    position: relative;
+    width: 280px;
+  }
+  
+  .route-search-icon {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    color: #7f8a9c;
+    pointer-events: none;
+  }
+  
+  .route-search {
+    width: 100%;
+    height: 40px;
+    padding: 0 14px 0 40px;
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+    outline: none;
+    color: #172033;
+    background: #ffffff;
+  }
+  
+  .route-search::placeholder {
+    color: #a0a8b5;
+  }
+  
+  .route-search:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.1);
+  }
+  
+  .live-network-button {
+    height: 40px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #52627a;
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .live-network-button:hover {
+    background: #f7f9fb;
+  }
+  
+  
+  /* =========================================================
+     ROUTE TABLE
+     ========================================================= */
+  
+  .route-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .route-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  .route-table th {
+    height: 52px;
+    padding: 0 14px;
+    background: #fafbfc;
+    border-bottom: 1px solid #e7ebf0;
+    color: #6e7a8d;
+    font-size: 10px;
+    font-weight: 750;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  
+  .route-table td {
+    height: 76px;
+    padding: 12px 14px;
+    border-bottom: 1px solid #edf0f4;
+    color: #344054;
+    font-size: 13px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .route-table tbody tr:hover {
+    background: #fafbfd;
+  }
+  
+  .route-table th:nth-child(1),
+  .route-table td:nth-child(1) {
+    width: 29%;
+  }
+  
+  .route-table th:nth-child(2),
+  .route-table td:nth-child(2) {
+    width: 10%;
+  }
+  
+  .route-table th:nth-child(3),
+  .route-table td:nth-child(3) {
+    width: 11%;
+  }
+  
+  .route-table th:nth-child(4),
+  .route-table td:nth-child(4) {
+    width: 11%;
+  }
+  
+  .route-table th:nth-child(5),
+  .route-table td:nth-child(5) {
+    width: 11%;
+  }
+  
+  .route-table th:nth-child(6),
+  .route-table td:nth-child(6) {
+    width: 9%;
+  }
+  
+  .route-table th:nth-child(7),
+  .route-table td:nth-child(7) {
+    width: 13%;
+  }
+  
+  .route-table th:nth-child(8),
+  .route-table td:nth-child(8) {
+    width: 6%;
+  }
+  
+  
+  /* =========================================================
+     ROUTE NAME
+     ========================================================= */
+  
+  .route-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+  
+  .route-location-icon {
+    flex-shrink: 0;
+    color: #64748b;
+  }
+  
+  .route-name {
+    min-width: 0;
+  }
+  
+  .route-name-primary {
+    font-size: 14px;
+    font-weight: 700;
+    color: #172033;
+    white-space: nowrap;
+  }
+  
+  .route-name-id {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #98a2b3;
+  }
+  
+  
+  /* =========================================================
+     ROUTE EFFICIENCY
+     ========================================================= */
+  
+  .route-efficiency {
+    font-size: 14px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  
+  /* =========================================================
+     ROUTE RISK BADGES
+     ========================================================= */
+  
+  .route-risk {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .route-risk-low {
+    background: #eaf8f0;
+    color: #228b57;
+  }
+  
+  .route-risk-moderate {
+    background: #fff6df;
+    color: #a87400;
+  }
+  
+  .route-risk-high {
+    background: #fff0f0;
+    color: #c43f3f;
+  }
+  
+  
+  /* =========================================================
+     ROUTE TREND
+     ========================================================= */
+  
+  .route-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .route-trend-up {
+    color: #d14a4a;
+  }
+  
+  .route-trend-down {
+    color: #24935b;
+  }
+  
+  .route-trend-neutral {
+    color: #7a8699;
+  }
+  
+  
+  /* =========================================================
+     ROUTE ACTION
+     ========================================================= */
+  
+  .route-action-button {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #66758a;
+  }
+  
+  .route-action-button:hover {
+    background: #f1f4f8;
+    color: #172033;
+  }
+  
+  
+  /* =========================================================
+     ROUTE INSIGHT
+     ========================================================= */
+  
+  .route-insight {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .route-insight-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eef3ff;
+    color: #4169d8;
+  }
+  
+  .route-insight-title {
+    margin: 0 0 5px;
+    font-size: 15px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .route-insight-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #697589;
+  }
+  
+  
+  /* =========================================================
+     MODULE PLACEHOLDER
+     ========================================================= */
+  
+  .module-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 32px 40px;
+  }
+  
+  .module-placeholder {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #e3e7ed;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+  }
+  
+  .module-placeholder-content {
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .module-placeholder-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #eef3ff;
+    color: #4169d8;
+  }
+  
+  .module-placeholder-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 750;
+    color: #172033;
+  }
+  
+  .module-placeholder-text {
+    margin: 9px 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #8490a2;
+  }
+  
+  
+  /* =========================================================
+     COMMON BADGES
+     ========================================================= */
+  
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .status-success {
+    background: #eaf8f0;
+    color: #228b57;
+  }
+  
+  .status-warning {
+    background: #fff6df;
+    color: #a87400;
+  }
+  
+  .status-danger {
+    background: #fff0f0;
+    color: #c43f3f;
+  }
+  
+  .status-info {
+    background: #edf3ff;
+    color: #4169d8;
+  }
+  
+  .status-neutral {
+    background: #f1f4f8;
+    color: #657287;
+  }
+  
+  
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  
+  .primary-button {
+    height: 40px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 9px;
+    background: #172033;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  
+  .primary-button:hover {
+    opacity: 0.92;
+  }
+  
+  .primary-button:active {
+    transform: translateY(1px);
+  }
+  
+  .secondary-button {
+    height: 40px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #52627a;
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .secondary-button:hover {
+    background: #f7f9fb;
+  }
+  
+  
+  /* =========================================================
+     SEARCH
+     ========================================================= */
+  
+  .search-container {
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+    color: #7f8a9c;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 14px 0 40px;
+    border: 1px solid #dce1e8;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+    color: #172033;
+  }
+  
+  .search-input::placeholder {
+    color: #a0a8b5;
+  }
+  
+  .search-input:focus {
+    border-color: #4b7bec;
+    box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.1);
+  }
+  
+  
+  /* =========================================================
+     SCROLLBAR
+     ========================================================= */
+  
+  .sidebar::-webkit-scrollbar,
+  .main-content::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  .sidebar::-webkit-scrollbar-track,
+  .main-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb,
+  .main-content::-webkit-scrollbar-thumb {
+    background: #cbd1d9;
+    border-radius: 10px;
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVE — LARGE TABLETS
+     ========================================================= */
+  
+  @media (max-width: 1200px) {
+    .sidebar {
+      width: 240px;
+    }
+  
+    .main-content {
+      width: calc(100% - 240px);
+      margin-left: 240px;
+    }
+  
+    .sidebar-brand {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+  
+    .sidebar-section-title {
+      padding-left: 24px;
+    }
+  
+    .dashboard-kpi-grid,
+    .shipment-summary-grid,
+    .fleet-summary-grid,
+    .routes-kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .dashboard-grid,
+    .fleet-content-grid,
+    .routes-analytics-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVE — TABLETS
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+    .sidebar {
+      width: 82px;
+    }
+  
+    .main-content {
+      width: calc(100% - 82px);
+      margin-left: 82px;
+    }
+  
+    .sidebar-brand {
+      height: 115px;
+      padding: 24px 19px;
+      justify-content: center;
+    }
+  
+    .brand-copy,
+    .sidebar-section-title,
+    .sidebar-nav-item span,
+    .sidebar-settings span,
+    .system-status-text {
+      display: none;
+    }
+  
+    .sidebar-nav {
+      padding: 0 12px;
+    }
+  
+    .sidebar-nav-item {
+      justify-content: center;
+      padding: 0;
+    }
+  
+    .sidebar-nav-arrow {
+      display: none;
+    }
+  
+    .sidebar-bottom {
+      padding: 14px 12px;
+    }
+  
+    .sidebar-settings {
+      justify-content: center;
+      padding: 0;
+    }
+  
+    .system-status {
+      justify-content: center;
+      padding: 13px 0;
+    }
+  
+    .system-status-dot {
+      width: 9px;
+      height: 9px;
+    }
+  
+    .page-container,
+    .dashboard-page,
+    .shipments-page,
+    .fleet-page,
+    .routes-page,
+    .module-page {
+      padding: 24px 22px 35px;
+    }
+  }
+  
+  
+  /* =========================================================
+     RESPONSIVE — MOBILE
+     ========================================================= */
+  
+  @media (max-width: 650px) {
+    .sidebar {
+      width: 68px;
+    }
+  
+    .main-content {
+      width: calc(100% - 68px);
+      margin-left: 68px;
+    }
+  
+    .sidebar-brand {
+      padding: 20px 12px;
+    }
+  
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .sidebar-nav {
+      padding: 0 8px;
+    }
+  
+    .sidebar-nav-item {
+      min-height: 46px;
+    }
+  
+    .sidebar-bottom {
+      padding: 10px 8px 15px;
+    }
+  
+    .page-container,
+    .dashboard-page,
+    .shipments-page,
+    .fleet-page,
+    .routes-page,
+    .module-page {
+      padding: 20px 14px 30px;
+    }
+  
+    .page-header h1,
+    .dashboard-header h1,
+    .shipments-header h1,
+    .fleet-header h1,
+    .routes-header h1 {
+      font-size: 24px;
+    }
+  
+    .dashboard-kpi-grid,
+    .shipment-summary-grid,
+    .fleet-summary-grid,
+    .routes-kpi-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .network-score {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .network-metrics {
+      grid-template-columns: 1fr;
+    }
+  
+    .risk-summary {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  
+    .risk-total {
+      min-width: 0;
+    }
+  
+    .route-toolbar {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  
+    .route-search-wrapper {
+      width: 100%;
+    }
+  
+    .live-network-button {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .route-performance-header {
+      padding: 18px;
+    }
+  
+    .route-table {
+      min-width: 900px;
+    }
+  
+    .fleet-card-body,
+    .route-panel-body {
+      padding: 16px;
+    }
+  }
+  
+  
+  /* =========================================================
+     SMALL SCREEN SAFETY
+     ========================================================= */
+  
+  @media (max-width: 430px) {
+    .main-content {
+      width: calc(100% - 60px);
+      margin-left: 60px;
+    }
+  
+    .sidebar {
+      width: 60px;
+    }
+  
+    .sidebar-nav {
+      padding: 0 6px;
+    }
+  
+    .sidebar-nav-item {
+      border-radius: 9px;
+    }
+  
+    .page-container,
+    .dashboard-page,
+    .shipments-page,
+    .fleet-page,
+    .routes-page,
+    .module-page {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+/* =========================================================
+   CURRENT APP.TSX COMPATIBILITY LAYER
+   Matches the current Dashboard + Sidebar class names.
+   ========================================================= */
+
+/* Global shell aliases */
+.brand {
+  height: 156px;
+  padding: 28px 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand > div:last-child {
+  min-width: 0;
+}
+
+.sidebar-section {
+  padding: 4px 30px 12px;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  color: #9aa4b3;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #69778d;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 650;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.nav-item svg {
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background: #f6f8fb;
+  color: #172033;
+}
+
+.nav-item.active {
+  background: #f0f4fa;
+  border-color: #1d6fe8;
+  color: #172033;
+  box-shadow: inset 0 0 0 1px rgba(29, 111, 232, 0.08);
+}
+
+.nav-item.active svg:last-child {
+  margin-left: auto;
+}
+
+.sidebar-bottom > .nav-item {
+  margin-bottom: 0;
+}
+
+.sidebar-bottom .system-status {
+  margin-top: 20px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #2db878;
+  box-shadow: 0 0 0 5px #e3f7ed;
+}
+
+.system-status > div:last-child {
+  min-width: 0;
+}
+
+.system-status strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 750;
+  color: #354154;
+}
+
+.system-status span {
+  display: block;
+  margin-top: 3px;
+  font-size: 9px;
+  color: #98a2b3;
+}
+
+/* Current dashboard */
+.main-content {
+  min-height: 100vh;
+  padding: 30px 32px 40px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #8b96a7;
+}
+
+.breadcrumb span {
+  margin: 0 6px;
+  color: #c0c7d1;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 780;
+  color: #172033;
+}
+
+.topbar p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  color: #8994a6;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.secondary-button,
+.primary-button {
+  min-height: 44px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.18s ease;
+}
+
+.secondary-button {
+  border: 1px solid #dce2e9;
+  background: #ffffff;
+  color: #5f6d82;
+}
+
+.secondary-button:hover {
+  border-color: #cbd3de;
+  background: #f9fafb;
+}
+
+.primary-button {
+  border: 1px solid #172033;
+  background: #172033;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: #253149;
+}
+
+.secondary-button.small {
+  min-height: 38px;
+  padding: 0 13px;
+  font-size: 12px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  min-height: 132px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+}
+
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.kpi-icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f1f4f8;
+  color: #53627a;
+}
+
+.kpi-change {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3f9b6c;
+}
+
+.kpi-value {
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 780;
+  color: #172033;
+}
+
+.kpi-title {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #7b8799;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+}
+
+.panel-header {
+  min-height: 70px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 720;
+  color: #172033;
+}
+
+.panel-header p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: #9aa4b3;
+}
+
+.text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64738a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.activity-list {
+  padding: 5px 20px;
+}
+
+.activity-item {
+  min-height: 68px;
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.activity-item:last-child {
+  border-bottom: 0;
+}
+
+.activity-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f3f5f8;
+  color: #64738a;
+}
+
+.activity-info {
+  min-width: 0;
+}
+
+.activity-info strong,
+.activity-info span {
+  display: block;
+}
+
+.activity-info strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: #253149;
+}
+
+.activity-info span {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #8c97a7;
+}
+
+.activity-item time {
+  white-space: nowrap;
+  font-size: 10px;
+  color: #a0a9b6;
+}
+
+.infrastructure-panel {
+  min-width: 0;
+}
+
+.infra-main {
+  padding: 24px 20px 18px;
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.hdfs-circle {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 7px solid #e7f5ee;
+  border-radius: 50%;
+  color: #2c9b68;
+}
+
+.hdfs-circle strong {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #253149;
+}
+
+.hdfs-circle span {
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #2c9b68;
+}
+
+.infra-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.infra-stats div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.infra-stats span {
+  font-size: 11px;
+  color: #8994a6;
+}
+
+.infra-stats strong {
+  font-size: 12px;
+  color: #253149;
+}
+
+.cluster-bar {
+  height: 7px;
+  margin: 0 20px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #edf0f4;
+}
+
+.cluster-progress {
+  width: 68%;
+  height: 100%;
+  border-radius: inherit;
+  background: #172033;
+}
+
+.cluster-footer {
+  padding: 9px 20px 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #929dac;
+}
+
+.cluster-footer strong {
+  color: #253149;
+}
+
+/* Dashboard route table — scoped so it does not interfere with Routes page */
+.dashboard-grid + .route-panel {
+  margin-bottom: 20px;
+}
+
+.route-panel .route-table {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  border-collapse: separate;
+}
+
+.route-panel .route-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.8fr) 0.8fr 0.9fr 1.25fr 24px;
+  align-items: center;
+  gap: 14px;
+  min-height: 62px;
+  padding: 0 20px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.route-panel .route-row:last-child {
+  border-bottom: 0;
+}
+
+.route-panel .route-heading {
+  min-height: 42px;
+  background: #fafbfc;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #9aa4b3;
+}
+
+.route-panel .route-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.route-panel .route-name strong {
+  font-size: 12px;
+  color: #253149;
+}
+
+.route-panel .route-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f2f4f7;
+  color: #66758b;
+}
+
+.route-panel .route-row > span:not(.risk-badge) {
+  font-size: 11px;
+  color: #66758b;
+}
+
+.route-panel .risk-badge {
+  justify-self: start;
+  padding: 5px 9px;
+  border-radius: 99px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.route-panel .risk-badge.high {
+  background: #fff0ef;
+  color: #c6544c;
+}
+
+.route-panel .risk-badge.moderate {
+  background: #fff7e8;
+  color: #a87520;
+}
+
+.route-panel .risk-badge.low {
+  background: #eaf8f0;
+  color: #31845d;
+}
+
+.route-panel .efficiency {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.route-panel .efficiency-bar {
+  width: 100%;
+  max-width: 120px;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #edf0f4;
+}
+
+.route-panel .efficiency-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #536b8d;
+}
+
+.route-panel .efficiency strong {
+  font-size: 11px;
+  color: #253149;
+}
+
+.route-panel .row-arrow {
+  color: #a0a9b6;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.score-card {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+}
+
+.score-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.score-card-header span {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #9aa4b3;
+}
+
+.score-card-header h3 {
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 720;
+  color: #253149;
+}
+
+.score-card-header > svg {
+  color: #66758b;
+}
+
+.score-content {
+  margin-top: 22px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.score-number {
+  font-size: 31px;
+  line-height: 1;
+  font-weight: 800;
+  color: #172033;
+}
+
+.score-number span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8d98a8;
+}
+
+.score-status {
+  padding: 5px 9px;
+  border-radius: 99px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.score-status.moderate {
+  background: #fff7e8;
+  color: #a87520;
+}
+
+.score-status.excellent {
+  background: #eaf8f0;
+  color: #31845d;
+}
+
+.score-card > p {
+  margin: 14px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #8994a6;
+}
+
+.dashboard-footer {
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+  color: #9aa4b3;
+}
+
+.dashboard-footer b {
+  margin: 0 5px;
+  color: #c0c7d1;
+}
+
+/* Keep current Dashboard visible even though older page CSS exists above. */
+.main-content > .topbar,
+.main-content > .kpi-grid,
+.main-content > .dashboard-grid,
+.main-content > .route-panel,
+.main-content > .score-grid,
+.main-content > .dashboard-footer {
+  width: 100%;
+}
+
+/* Current coming-soon modules */
+.coming-soon {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px;
+}
+
+.coming-soon-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #172033;
+  color: #ffffff;
+}
+
+.coming-soon h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #172033;
+}
+
+.coming-soon p {
+  margin: 8px 0 18px;
+  color: #8994a6;
+}
+
+.module-status {
+  padding: 7px 10px;
+  border-radius: 99px;
+  background: #f0f3f7;
+  color: #65748a;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* Responsive compatibility */
+@media (max-width: 1100px) {
+  .kpi-grid,
+  .score-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions button {
+    flex: 1;
+  }
+
+  .main-content {
+    padding: 24px 22px 35px;
+  }
+
+  .route-panel .route-row {
+    grid-template-columns: minmax(190px, 1.5fr) 0.8fr 0.8fr 1fr 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    width: 68px;
+  }
+
+  .main-content {
+    width: calc(100% - 68px);
+    margin-left: 68px;
+    padding: 20px 14px 30px;
+  }
+
+  .brand {
+    padding: 20px 12px;
+  }
+
+  .brand > div:last-child,
+  .sidebar-section,
+  .nav-item span,
+  .sidebar-bottom .system-status > div:last-child {
+    display: none;
+  }
+
+  .nav-menu {
+    padding: 0 8px;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-item.active svg:last-child {
+    display: none;
+  }
+
+  .kpi-grid,
+  .score-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .infra-main {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-footer {
+    flex-direction: column;
+  }
+
+  .route-panel .route-table {
+    overflow-x: auto;
+  }
+
+  .route-panel .route-row {
+    min-width: 720px;
+  }
+}
+
+/* =========================================================
+   LOGIX — FINAL PAGE ALIGNMENT
+   Exact selectors for current Shipments / Fleet / Routes TSX
+   ========================================================= */
+
+/* ---------- SHARED PAGE FOUNDATION ---------- */
+.page-container,
+.shipments-page,
+.fleet-page {
+  width: 100%;
+  padding: 30px 36px 42px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+  color: #91a0b5;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.breadcrumb span {
+  color: #c2c9d3;
+}
+
+/* ---------- SHIPMENTS ---------- */
+.shipments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+
+.shipments-header h1,
+.fleet-header h1,
+.page-heading h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 780;
+  letter-spacing: -.02em;
+}
+
+.shipments-header p,
+.fleet-header p,
+.page-heading p {
+  max-width: 780px;
+  margin: 8px 0 0;
+  color: #8994a6;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.shipment-summary-grid,
+.fleet-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.shipment-summary-card,
+.fleet-summary-card {
+  min-width: 0;
+  min-height: 126px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20,32,51,.04);
+}
+
+.shipment-summary-top,
+.fleet-summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.shipment-summary-label,
+.fleet-summary-label {
+  color: #7b8799;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.shipment-summary-icon,
+.fleet-summary-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f1f4f8;
+  color: #52627a;
+}
+
+.shipment-summary-value,
+.fleet-summary-value {
+  color: #172033;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: -.02em;
+}
+
+.shipment-summary-note,
+.fleet-summary-note {
+  margin-top: 8px;
+  color: #909aaa;
+  font-size: 11px;
+}
+
+.shipments-table-card,
+.fleet-records-card {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20,32,51,.04);
+}
+
+.shipments-table-header,
+.fleet-records-header {
+  padding: 20px 22px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.shipments-table-title,
+.fleet-records-title {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.shipments-table-description,
+.fleet-records-description {
+  margin: 6px 0 0;
+  color: #8994a6;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.shipments-toolbar {
+  min-height: 68px;
+  padding: 13px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.shipment-search-wrap {
+  position: relative;
+  width: min(420px, 100%);
+  display: flex;
+  align-items: center;
+}
+
+.shipment-search-wrap > svg {
+  position: absolute;
+  left: 13px;
+  color: #8995a8;
+  pointer-events: none;
+}
+
+.shipment-search {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px 0 39px;
+  border: 1px solid #dce1e8;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #172033;
+  font-size: 12px;
+}
+
+.shipment-search::placeholder {
+  color: #a0a8b5;
+}
+
+.shipment-search:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 3px rgba(75,123,236,.1);
+}
+
+.secondary-button.small {
+  height: 38px;
+  padding: 0 13px;
+  white-space: nowrap;
+}
+
+.shipments-table-wrapper,
+.fleet-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.shipments-table,
+.fleet-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.shipments-table th,
+.fleet-table th {
+  height: 48px;
+  padding: 0 18px;
+  background: #fafbfc;
+  border-bottom: 1px solid #e7ebf0;
+  text-align: left;
+  color: #6d788a;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .06em;
+}
+
+.shipments-table td,
+.fleet-table td {
+  height: 68px;
+  padding: 10px 18px;
+  border-bottom: 1px solid #edf0f4;
+  color: #344054;
+  font-size: 13px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.shipments-table tbody tr:hover,
+.fleet-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+.shipment-id,
+.vehicle-registration {
+  color: #172033;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.shipment-route {
+  color: #344054;
+  font-weight: 650;
+}
+
+.shipment-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.shipment-status-delivered { background:#eaf8f0; color:#238957; }
+.shipment-status-in-transit { background:#edf3ff; color:#4169d8; }
+.shipment-status-delayed { background:#fff0f0; color:#c44242; }
+.shipment-status-pending { background:#fff7e4; color:#a87500; }
+
+/* ---------- FLEET ---------- */
+.fleet-header {
+  margin-bottom: 26px;
+}
+
+.fleet-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.fleet-performance-card,
+.fleet-status-card,
+.fleet-insight-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20,32,51,.04);
+}
+
+.fleet-card-header {
+  min-height: 70px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.fleet-card-title {
+  color: #172033;
+  font-size: 15px;
+  font-weight: 720;
+}
+
+.fleet-card-subtitle {
+  margin-top: 4px;
+  color: #9aa4b3;
+  font-size: 11px;
+}
+
+.fleet-card-body {
+  padding: 20px;
+}
+
+.fleet-score {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.fleet-score-value {
+  color: #172033;
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.fleet-score-value span {
+  color: #8a95a6;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.fleet-score-description {
+  color: #758195;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.fleet-progress {
+  height: 9px;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0f4;
+}
+
+.fleet-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #35b779;
+}
+
+.fleet-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.fleet-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.fleet-status-name { color:#697589; font-size:13px; }
+.fleet-status-value { color:#172033; font-size:13px; font-weight:750; }
+
+.vehicle-type {
+  margin-top: 4px;
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+.vehicle-utilization { min-width: 120px; }
+.vehicle-utilization-top {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  color:#7b8799;
+  font-size:11px;
+}
+.vehicle-utilization-value { color:#52627a; font-weight:700; }
+.vehicle-utilization-bar {
+  height:6px;
+  overflow:hidden;
+  border-radius:10px;
+  background:#edf0f4;
+}
+.vehicle-utilization-fill {
+  height:100%;
+  border-radius:10px;
+  background:#536fd8;
+}
+
+.vehicle-health {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:5px 9px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:700;
+}
+.vehicle-health-good { background:#eaf8f0; color:#238957; }
+.vehicle-health-warning { background:#fff6df; color:#a87400; }
+.vehicle-health-critical { background:#fff0f0; color:#c44242; }
+
+.fleet-insight-card {
+  margin-top: 20px;
+  padding: 20px;
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+.fleet-insight-icon {
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:#eef3ff;
+  color:#4169d8;
+}
+.fleet-insight-title { margin:0 0 5px; color:#172033; font-size:15px; font-weight:750; }
+.fleet-insight-text { margin:0; color:#697589; font-size:13px; line-height:1.6; }
+
+/* ---------- ROUTES ---------- */
+.page-heading {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:26px;
+}
+
+.page-heading > div { min-width:0; }
+
+.route-summary {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.route-stat-card {
+  min-width:0;
+  min-height:126px;
+  padding:20px;
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  background:#fff;
+  border:1px solid #e3e7ed;
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(20,32,51,.04);
+}
+
+.route-stat-icon {
+  width:35px;
+  height:35px;
+  flex:0 0 35px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:9px;
+  background:#f1f4f8;
+  color:#52627a;
+}
+
+.route-stat-card span,
+.route-stat-card small {
+  display:block;
+}
+.route-stat-card span { color:#7b8799; font-size:12px; font-weight:650; }
+.route-stat-card strong { display:block; margin-top:10px; color:#172033; font-size:28px; line-height:1; font-weight:780; }
+.route-stat-card small { margin-top:8px; color:#909aaa; font-size:11px; }
+
+.route-overview-grid {
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.route-overview-grid .panel,
+.routes-table-panel {
+  min-width:0;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #e3e7ed;
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(20,32,51,.04);
+}
+
+.route-overview-grid .panel-header,
+.routes-table-panel .routes-toolbar {
+  min-height:70px;
+  padding:18px 22px;
+  border-bottom:1px solid #edf0f4;
+}
+
+.route-overview-grid .panel-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.panel-header h2,
+.routes-toolbar h2 {
+  margin:0;
+  color:#172033;
+  font-size:17px;
+  font-weight:750;
+}
+
+.panel-header p,
+.routes-toolbar p {
+  margin:5px 0 0;
+  color:#9aa4b3;
+  font-size:11px;
+}
+
+.network-content {
+  padding:22px;
+}
+
+.network-score {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.network-score-ring {
+  width:112px;
+  height:112px;
+  flex:0 0 112px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border:9px solid #e1f5eb;
+  border-radius:50%;
+}
+.network-score-ring strong { color:#172033; font-size:32px; line-height:1; font-weight:800; }
+.network-score-ring span { margin-top:4px; color:#98a2b3; font-size:11px; }
+
+.network-score > div:last-child span {
+  display:block;
+  color:#8b96a8;
+  font-size:9px;
+  font-weight:750;
+  letter-spacing:.08em;
+}
+.network-score > div:last-child strong {
+  display:block;
+  margin-top:7px;
+  color:#172033;
+  font-size:15px;
+}
+.network-score > div:last-child p {
+  max-width:360px;
+  margin:6px 0 0;
+  color:#7c8798;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.network-bars { margin-top:22px; }
+.network-bars > div:not(.network-bar) {
+  display:flex;
+  justify-content:space-between;
+  margin-top:13px;
+  color:#697589;
+  font-size:11px;
+}
+.network-bars > div:first-child { margin-top:0; }
+.network-bars strong { color:#172033; }
+.network-bar { height:7px; margin-top:6px; overflow:hidden; border-radius:20px; background:#edf0f4; }
+.network-bar > div { height:100%; border-radius:20px; background:#536fd8; }
+
+.risk-distribution { padding:22px; display:flex; align-items:center; gap:22px; }
+.risk-total { min-width:105px; }
+.risk-total strong { display:block; color:#172033; font-size:32px; line-height:1; font-weight:800; }
+.risk-total span { display:block; margin-top:7px; color:#8a95a6; font-size:12px; }
+.risk-distribution-list { flex:1; display:flex; flex-direction:column; gap:15px; }
+.risk-distribution-list > div { display:grid; grid-template-columns:9px 1fr auto auto; align-items:center; gap:9px; }
+.risk-marker { width:8px; height:8px; border-radius:50%; }
+.risk-marker.low { background:#35b779; }
+.risk-marker.moderate { background:#e7ad32; }
+.risk-marker.high { background:#e05252; }
+.risk-distribution-list span:not(.risk-marker) { color:#697589; font-size:12px; }
+.risk-distribution-list strong { color:#172033; font-size:12px; }
+.risk-distribution-list small { color:#98a2b3; font-size:10px; }
+
+.routes-toolbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.routes-actions { display:flex; align-items:center; gap:10px; }
+.routes-search { position:relative; width:300px; }
+.routes-search svg { position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#8995a8; }
+.routes-search input { width:100%; height:38px; padding:0 12px 0 37px; border:1px solid #dce1e8; border-radius:9px; outline:none; background:#fff; color:#172033; font-size:12px; }
+.routes-search input:focus { border-color:#4b7bec; box-shadow:0 0 0 3px rgba(75,123,236,.1); }
+
+.routes-table-wrapper { width:100%; overflow-x:auto; }
+.routes-table { width:100%; min-width:1000px; border-collapse:collapse; }
+.routes-table th { height:48px; padding:0 18px; background:#fafbfc; border-bottom:1px solid #e7ebf0; text-align:left; color:#6d788a; font-size:10px; font-weight:750; letter-spacing:.06em; }
+.routes-table td { height:72px; padding:10px 18px; border-bottom:1px solid #edf0f4; color:#344054; font-size:12px; vertical-align:middle; white-space:nowrap; }
+.routes-table tbody tr:hover { background:#fafbfd; }
+
+.route-table-name { display:flex; align-items:center; gap:11px; }
+.route-table-icon { width:32px; height:32px; flex:0 0 32px; display:flex; align-items:center; justify-content:center; border-radius:8px; background:#f1f4f8; color:#52627a; }
+.route-table-name strong { display:block; color:#172033; font-size:12px; font-weight:700; }
+.route-table-name span { display:block; margin-top:3px; color:#9aa4b3; font-size:10px; }
+.route-efficiency { width:120px; display:flex; align-items:center; gap:10px; }
+.route-efficiency-bar { width:82px; height:6px; overflow:hidden; border-radius:20px; background:#edf0f4; }
+.route-efficiency-bar > div { height:100%; border-radius:20px; background:#536fd8; }
+.route-efficiency strong { color:#172033; font-size:11px; }
+.route-risk { display:inline-flex; padding:5px 9px; border-radius:20px; font-size:10px; font-weight:700; }
+.route-risk.low { background:#eaf8f0; color:#238957; }
+.route-risk.moderate { background:#fff6df; color:#a87400; }
+.route-risk.high { background:#fff0f0; color:#c44242; }
+.route-trend { display:inline-flex; align-items:center; gap:5px; font-size:10px; font-weight:650; }
+.route-trend.up { color:#c44242; }
+.route-trend.down { color:#238957; }
+.route-row-arrow { color:#a2adbb; }
+
+.route-insight {
+  margin-top:20px;
+  padding:18px 20px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:14px;
+  background:#fff;
+  border:1px solid #e3e7ed;
+  border-radius:14px;
+  box-shadow:0 2px 8px rgba(20,32,51,.04);
+}
+.route-insight-icon { width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:10px; background:#fff6df; color:#a87400; }
+.route-insight strong { color:#172033; font-size:14px; }
+.route-insight p { margin:5px 0 0; color:#697589; font-size:12px; line-height:1.55; }
+.route-insight-score { text-align:right; }
+.route-insight-score span { display:block; color:#98a2b3; font-size:9px; font-weight:750; letter-spacing:.08em; }
+.route-insight-score strong { display:block; margin-top:4px; font-size:18px; }
+
+.dashboard-footer {
+  margin-top:26px;
+  padding:18px 2px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  color:#9aa4b3;
+  font-size:10px;
+}
+.dashboard-footer b { margin:0 5px; color:#c5ccd5; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1200px) {
+  .shipment-summary-grid,
+  .fleet-summary-grid,
+  .route-summary { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .fleet-content-grid,
+  .route-overview-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width: 760px) {
+  .page-container,
+  .shipments-page,
+  .fleet-page { padding:24px 18px 34px; }
+  .page-heading { align-items:flex-start; flex-direction:column; }
+  .page-heading .primary-button { width:100%; }
+  .shipment-summary-grid,
+  .fleet-summary-grid,
+  .route-summary { grid-template-columns:1fr; }
+  .shipments-toolbar,
+  .routes-toolbar { align-items:stretch; flex-direction:column; }
+  .shipment-search-wrap,
+  .routes-search { width:100%; }
+  .shipments-toolbar .secondary-button,
+  .routes-actions .secondary-button { width:100%; justify-content:center; }
+  .routes-actions { flex-direction:column; }
+  .risk-distribution { align-items:flex-start; flex-direction:column; }
+  .risk-total { min-width:0; }
+  .route-insight { grid-template-columns:auto 1fr; }
+  .route-insight-score { grid-column:2; text-align:left; }
+}
