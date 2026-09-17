@@ -138,7 +138,7 @@ function Dashboard() {
 
   useEffect(() => {
 
-    fetch('http://localhost:8000/api/dashboard')
+    fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/dashboard')
 
       .then((response) => {
 

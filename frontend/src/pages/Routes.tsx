@@ -47,7 +47,7 @@ function Routes() {
         setLoading(true)
         setError('')
 
-        const response = await fetch('http://localhost:8000/api/routes')
+        const response = await fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/routes')
 
         if (!response.ok) {
           throw new Error('Failed to fetch route data')

@@ -30,7 +30,7 @@ export default function Simulator() {
       setError('')
 
       const response = await fetch(
-        'http://localhost:8000/api/simulator',
+        'https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/simulator',
         {
           method: 'POST',
           headers: {
@@ -205,14 +205,57 @@ export default function Simulator() {
 
           <label>
 
-            <div>
-              <span>
-                Traffic Congestion
-              </span>
+            <div className="sim-label-row">
+
+              <div className="traffic-heading">
+
+                <span>
+                  Traffic Congestion
+                </span>
+
+                {/* TRAFFIC LIGHT HOUSING */}
+
+                <div className="traffic-status">
+
+                  <span
+                    className={`traffic-light traffic-green ${
+                      traffic <= 33
+                        ? 'active'
+                        : ''
+                    }`}
+                  >
+                    🟢
+                  </span>
+
+                  <span
+                    className={`traffic-light traffic-yellow ${
+                      traffic > 33 &&
+                      traffic <= 66
+                        ? 'active'
+                        : ''
+                    }`}
+                  >
+                    🟡
+                  </span>
+
+                  <span
+                    className={`traffic-light traffic-red ${
+                      traffic > 66
+                        ? 'active'
+                        : ''
+                    }`}
+                  >
+                    🔴
+                  </span>
+
+                </div>
+
+              </div>
 
               <strong>
                 {traffic}%
               </strong>
+
             </div>
 
             <input
@@ -224,6 +267,7 @@ export default function Simulator() {
                 setTraffic(
                   Number(e.target.value)
                 )
+
                 setResult(null)
               }}
             />
@@ -258,6 +302,7 @@ export default function Simulator() {
                 setDispatch(
                   Number(e.target.value)
                 )
+
                 setResult(null)
               }}
             />
@@ -291,6 +336,7 @@ export default function Simulator() {
                 setVehicleEfficiency(
                   Number(e.target.value)
                 )
+
                 setResult(null)
               }}
             />
@@ -308,9 +354,9 @@ export default function Simulator() {
             className="sim-run-button"
             onClick={runSimulation}
             disabled={loading}
-            >
+          >
             <Zap size={16} />
-          
+
             {loading
               ? 'Running Simulation...'
               : 'Run Simulation'}

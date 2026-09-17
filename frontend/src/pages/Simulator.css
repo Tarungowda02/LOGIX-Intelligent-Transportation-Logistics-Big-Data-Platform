@@ -7,6 +7,7 @@
     padding: 30px 32px 40px;
   }
   
+  
   /* =========================================================
      HEADER
      ========================================================= */
@@ -54,6 +55,7 @@
     color: #8994a6;
   }
   
+  
   /* =========================================================
      RESET BUTTON
      ========================================================= */
@@ -77,11 +79,18 @@
   
     font-size: 12px;
     font-weight: 650;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
   }
   
   .sim-reset:hover {
     background: #f7f9fb;
   }
+  
   
   /* =========================================================
      MAIN LAYOUT
@@ -94,6 +103,7 @@
   
     gap: 20px;
   }
+  
   
   /* =========================================================
      PANELS
@@ -129,6 +139,7 @@
     color: #172033;
   }
   
+  
   /* =========================================================
      CONTROL GROUP
      ========================================================= */
@@ -160,6 +171,7 @@
     color: #172033;
   }
   
+  
   /* =========================================================
      RANGE SLIDERS
      ========================================================= */
@@ -182,6 +194,155 @@
   
     color: #98a2b3;
   }
+  
+  
+  /* =========================================================
+     TRAFFIC CONGESTION STATUS
+     ========================================================= */
+  
+  .sim-label-row {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between !important;
+  
+    width: 100%;
+  }
+  
+  .traffic-heading {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start !important;
+  
+    gap: 10px;
+  }
+  
+  .traffic-heading > span {
+    display: inline-flex;
+    align-items: center;
+  
+    font-size: 13px;
+    font-weight: 600;
+  
+    color: #4f5c70;
+  }
+  
+  
+  /* =========================================================
+     TRAFFIC LIGHT HOUSING
+     ONE OUTER BORDER — LIKE 🚥
+     ========================================================= */
+  
+  .traffic-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 2px;
+  
+    height: 30px;
+  
+    padding: 3px 5px;
+  
+    box-sizing: border-box;
+  
+    background: #ffffff;
+  
+    border: 2px solid #182238;
+    border-radius: 8px;
+  
+    box-shadow:
+      0 1px 2px rgba(20, 32, 51, 0.12);
+  
+    transition:
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+  
+  
+  /* =========================================================
+     INDIVIDUAL LIGHTS
+     NO INDIVIDUAL BORDER
+     ========================================================= */
+  
+  .traffic-light {
+    width: 21px;
+    height: 21px;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    box-sizing: border-box;
+  
+    border: none !important;
+  
+    border-radius: 50%;
+  
+    font-size: 18px;
+    line-height: 1;
+  
+    opacity: 0.22;
+  
+    filter: grayscale(0.35);
+  
+    transform: scale(0.90);
+  
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      filter 0.25s ease,
+      text-shadow 0.25s ease;
+  }
+  
+  
+  /* =========================================================
+     ACTIVE LIGHT
+     ========================================================= */
+  
+  .traffic-light.active {
+    opacity: 1;
+  
+    filter: grayscale(0);
+  
+    transform: scale(1.08);
+  }
+  
+  
+  /* =========================================================
+     GREEN — 0% TO 33%
+     ========================================================= */
+  
+  .traffic-green.active {
+    text-shadow:
+      0 0 3px rgba(34, 197, 94, 0.95),
+      0 0 7px rgba(34, 197, 94, 0.80),
+      0 0 14px rgba(34, 197, 94, 0.55);
+  }
+  
+  
+  /* =========================================================
+     YELLOW — 34% TO 66%
+     ========================================================= */
+  
+  .traffic-yellow.active {
+    text-shadow:
+      0 0 3px rgba(250, 204, 21, 0.95),
+      0 0 7px rgba(250, 204, 21, 0.80),
+      0 0 14px rgba(250, 204, 21, 0.55);
+  }
+  
+  
+  /* =========================================================
+     RED — 67% TO 100%
+     ========================================================= */
+  
+  .traffic-red.active {
+    text-shadow:
+      0 0 3px rgba(239, 68, 68, 0.95),
+      0 0 7px rgba(239, 68, 68, 0.80),
+      0 0 14px rgba(239, 68, 68, 0.55);
+  }
+  
   
   /* =========================================================
      RESULT GRID
@@ -275,6 +436,7 @@
     color: #697589;
   }
   
+  
   /* =========================================================
      RESULT STATUS COLORS
      ========================================================= */
@@ -290,6 +452,7 @@
   .sim-low {
     color: #238957 !important;
   }
+  
   
   /* =========================================================
      SIMULATION EXPLANATION
@@ -321,11 +484,66 @@
     color: #697589;
   }
   
+  
+  /* =========================================================
+     RUN SIMULATION BUTTON
+     ========================================================= */
+  
+  .sim-run-button {
+    width: 100%;
+  
+    margin-top: 10px;
+  
+    padding: 13px 18px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 8px;
+  
+    border: 1px solid #182238;
+    border-radius: 10px;
+  
+    background: #182238;
+    color: #ffffff;
+  
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .sim-run-button:hover {
+    background: #24304a;
+    border-color: #24304a;
+  }
+  
+  .sim-run-button:active {
+    transform: translateY(1px);
+  }
+  
+  .sim-run-button:disabled {
+    opacity: 0.65;
+  
+    cursor: not-allowed;
+  
+    transform: none;
+  }
+  
+  
   /* =========================================================
      RESPONSIVE
      ========================================================= */
   
   @media (max-width: 1000px) {
+  
     .sim-layout {
       grid-template-columns: 1fr;
     }
@@ -333,9 +551,12 @@
     .sim-result-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  
   }
   
+  
   @media (max-width: 700px) {
+  
     .simulator-page {
       padding: 20px 14px 30px;
     }
@@ -351,48 +572,22 @@
     .sim-result-grid {
       grid-template-columns: 1fr;
     }
+  
+    .traffic-status {
+      gap: 2px;
+  
+      height: 28px;
+  
+      padding: 3px 4px;
+  
+      border-radius: 7px;
+    }
+  
+    .traffic-light {
+      width: 19px;
+      height: 19px;
+  
+      font-size: 16px;
+    }
+  
   }
-  /* RUN SIMULATION BUTTON */
-
-.sim-run-button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 13px 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  border: 1px solid #182238;
-  border-radius: 10px;
-
-  background: #182238;
-  color: #ffffff;
-
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.sim-run-button:hover {
-  background: #24304a;
-  border-color: #24304a;
-}
-
-.sim-run-button:active {
-  transform: translateY(1px);
-}
-
-.sim-run-button:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-  transform: none;
-}

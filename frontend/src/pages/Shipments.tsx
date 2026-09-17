@@ -47,7 +47,7 @@ function Shipments() {
 
   useEffect(() => {
 
-    fetch('http://localhost:8000/api/shipments')
+    fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/shipments')
 
       .then((response) => {
 
@@ -162,15 +162,6 @@ function Shipments() {
   // ==========================================================
   // DATE DISPLAY
   // ==========================================================
-
-  const formatDispatch = () => {
-    return 'Live Dataset'
-  }
-
-
-  const formatEta = () => {
-    return 'Backend Data'
-  }
 
 
   // ==========================================================

@@ -50,8 +50,8 @@ export default function RiskCenter() {
 
         const [routesResponse, fleetResponse] =
           await Promise.all([
-            fetch('http://localhost:8000/api/routes'),
-            fetch('http://localhost:8000/api/fleet'),
+            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/routes'),
+            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/fleet'),
           ])
 
         if (!routesResponse.ok || !fleetResponse.ok) {

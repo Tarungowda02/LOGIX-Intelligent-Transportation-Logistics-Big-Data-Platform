@@ -63,9 +63,9 @@ export default function Analytics() {
 
         const [dashboardResponse, shipmentsResponse, routesResponse] =
           await Promise.all([
-            fetch('http://localhost:8000/api/dashboard'),
-            fetch('http://localhost:8000/api/shipments'),
-            fetch('http://localhost:8000/api/routes'),
+            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/dashboard'),
+            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/shipments'),
+            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/routes'),
           ])
 
         if (
@@ -140,24 +140,6 @@ export default function Analytics() {
         scores.length
     )
   }, [routes])
-
-  /* =========================
-     ON-TIME PERFORMANCE
-  ========================= */
-
-  const onTimePerformance = useMemo(() => {
-    if (shipments.length === 0) return 0
-
-    const onTimeShipments = shipments.filter(
-      (shipment) =>
-        shipment.delay_minutes <= 0 ||
-        shipment.status === 'Delivered'
-    ).length
-
-    return Math.round(
-      (onTimeShipments / shipments.length) * 100
-    )
-  }, [shipments])
 
   /* =========================
      AVERAGE DELIVERY TIME

@@ -266,7 +266,7 @@ export default function SystemSettings() {
 
             <div>
               <span>API Endpoint</span>
-              <strong>localhost:8000</strong>
+              <strong>mild-spring-deputy-less.trycloudflare.com</strong>
             </div>
 
             <div>
