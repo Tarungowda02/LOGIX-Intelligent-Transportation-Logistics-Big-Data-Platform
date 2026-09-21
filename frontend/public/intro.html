@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Cinematic 3D Animated Intro</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0a0c12;
+    }
+  </style>
+</head>
+<body class="w-full h-full bg-[#0a0c12] flex items-center justify-center overflow-hidden select-none">
+<!-- Standalone Pure 3D Cinematic Animation Canvas (No UI, No Text, No Logos) -->
+<!-- STITCH_THREEJS_START:ANIMATION_3 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_3" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_3');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+// Scene setup
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0c14);
+scene.fog = new THREE.FogExp2(0x0a0c14, 0.018);
+
+// Camera setup (Cinematic side/front 3/4 view)
+const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
+camera.position.set(2.0, 3.6, 15.0);
+camera.lookAt(0, 1.4, 0);
+
+// WebGL Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.35;
+container.appendChild(renderer.domElement);
+
+// Lighting setup for cinematic mood
+const ambientLight = new THREE.AmbientLight(0x28344e, 1.3);
+scene.add(ambientLight);
+
+const keyLight = new THREE.DirectionalLight(0xfff5e3, 3.4);
+keyLight.position.set(14, 20, 12);
+keyLight.castShadow = true;
+keyLight.shadow.mapSize.width = 2048;
+keyLight.shadow.mapSize.height = 2048;
+keyLight.shadow.camera.near = 0.5;
+keyLight.shadow.camera.far = 45;
+keyLight.shadow.bias = -0.0004;
+const d = 12;
+keyLight.shadow.camera.left = -d;
+keyLight.shadow.camera.right = d;
+keyLight.shadow.camera.top = d;
+keyLight.shadow.camera.bottom = -d;
+scene.add(keyLight);
+
+const rimLight = new THREE.DirectionalLight(0x4095ff, 3.8);
+rimLight.position.set(-16, 12, -10);
+scene.add(rimLight);
+
+const groundFill = new THREE.DirectionalLight(0x1a263c, 1.2);
+groundFill.position.set(0, -6, 6);
+scene.add(groundFill);
+
+// Ground / Highway Asphalt
+const groundGeo = new THREE.PlaneGeometry(140, 140);
+const groundMat = new THREE.MeshStandardMaterial({
+  color: 0x0e1118,
+  roughness: 0.55,
+  metalness: 0.25,
+});
+const ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = 0;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// Highway lane markers
+const lineGeo = new THREE.PlaneGeometry(2.8, 0.18);
+const lineMat = new THREE.MeshStandardMaterial({ color: 0xdf9e24, roughness: 0.4 });
+for (let i = -12; i <= 12; i++) {
+  const line = new THREE.Mesh(lineGeo, lineMat);
+  line.rotation.x = -Math.PI / 2;
+  line.position.set(i * 5.0, 0.01, 2.2);
+  line.receiveShadow = true;
+  scene.add(line);
+}
+
+// -------------------------------------------------------------
+// PREMIUM 3D TRUCK MODELING
+// -------------------------------------------------------------
+const truckRoot = new THREE.Group();
+scene.add(truckRoot);
+
+// Sub-group for drift pivot & body roll
+const truckBody = new THREE.Group();
+truckRoot.add(truckBody);
+
+// Materials
+const paintMat = new THREE.MeshStandardMaterial({
+  color: 0x0952c4, // Royal metallic blue
+  metalness: 0.65,
+  roughness: 0.2,
+});
+
+const accentPaintMat = new THREE.MeshStandardMaterial({
+  color: 0x052866,
+  metalness: 0.7,
+  roughness: 0.28,
+});
+
+const cargoMat = new THREE.MeshStandardMaterial({
+  color: 0xebf0f8, // Crisp industrial gloss container white
+  metalness: 0.15,
+  roughness: 0.3,
+});
+
+const chromeMat = new THREE.MeshStandardMaterial({
+  color: 0xf3f6fc,
+  metalness: 0.94,
+  roughness: 0.1,
+});
+
+const darkMetalMat = new THREE.MeshStandardMaterial({
+  color: 0x1b2028,
+  metalness: 0.85,
+  roughness: 0.4,
+});
+
+const glassMat = new THREE.MeshStandardMaterial({
+  color: 0x081324,
+  roughness: 0.04,
+  metalness: 0.9,
+  transparent: true,
+  opacity: 0.9,
+});
+
+const tireMat = new THREE.MeshStandardMaterial({
+  color: 0x121419,
+  roughness: 0.82,
+  metalness: 0.08,
+});
+
+const glowHeadlightMat = new THREE.MeshStandardMaterial({
+  color: 0xffffff,
+  emissive: 0xffeebb,
+  emissiveIntensity: 4.0,
+  roughness: 0.1,
+});
+
+// 1. Heavy Chassis Frame
+const chassis = new THREE.Mesh(new THREE.BoxGeometry(11.2, 0.45, 2.3), darkMetalMat);
+chassis.position.set(0, 0.75, 0);
+chassis.castShadow = true;
+chassis.receiveShadow = true;
+truckBody.add(chassis);
+
+// Dual Chrome Fuel Tanks
+const tankR = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 2.2, 24), chromeMat);
+tankR.rotation.z = Math.PI / 2;
+tankR.position.set(1.2, 0.7, 1.25);
+tankR.castShadow = true;
+truckBody.add(tankR);
+
+const tankL = tankR.clone();
+tankL.position.z = -1.25;
+truckBody.add(tankL);
+
+// 2. Aerodynamic Cabin
+const cabinGroup = new THREE.Group();
+cabinGroup.position.set(3.9, 0.95, 0);
+
+const cabinLower = new THREE.Mesh(new THREE.BoxGeometry(2.8, 1.8, 2.45), paintMat);
+cabinLower.position.set(0, 0.9, 0);
+cabinLower.castShadow = true;
+cabinGroup.add(cabinLower);
+
+const cabinRoof = new THREE.Mesh(new THREE.BoxGeometry(2.3, 1.1, 2.4), paintMat);
+cabinRoof.position.set(-0.25, 2.35, 0);
+cabinRoof.castShadow = true;
+cabinGroup.add(cabinRoof);
+
+// Aerodynamic fairing roof scoop
+const roofScoop = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 1.25, 2.1, 16, 1, false, 0, Math.PI), accentPaintMat);
+roofScoop.rotation.z = -Math.PI / 2;
+roofScoop.rotation.x = Math.PI / 2;
+roofScoop.position.set(-0.2, 3.12, 0);
+roofScoop.castShadow = true;
+cabinGroup.add(roofScoop);
+
+// Front Grille & Heavy Bumper
+const grille = new THREE.Mesh(new THREE.BoxGeometry(0.25, 1.25, 1.9), chromeMat);
+grille.position.set(1.42, 0.75, 0);
+grille.castShadow = true;
+cabinGroup.add(grille);
+
+for (let s = -0.45; s <= 0.45; s += 0.22) {
+  const slat = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.08, 1.76), darkMetalMat);
+  slat.position.set(1.52, 0.75 + s, 0);
+  cabinGroup.add(slat);
+}
+
+const bumper = new THREE.Mesh(new THREE.BoxGeometry(0.65, 0.55, 2.65), darkMetalMat);
+bumper.position.set(1.36, 0.05, 0);
+bumper.castShadow = true;
+cabinGroup.add(bumper);
+
+// Windshield & Windows
+const windshield = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1.0, 2.22), glassMat);
+windshield.position.set(0.7, 2.05, 0);
+windshield.rotation.z = -0.28;
+cabinGroup.add(windshield);
+
+const sideWinR = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.7, 0.1), glassMat);
+sideWinR.position.set(0.3, 2.0, 1.24);
+cabinGroup.add(sideWinR);
+
+const sideWinL = sideWinR.clone();
+sideWinL.position.z = -1.24;
+cabinGroup.add(sideWinL);
+
+// Headlights
+const hlR = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.28, 0.45), glowHeadlightMat);
+hlR.position.set(1.48, 0.35, 0.95);
+cabinGroup.add(hlR);
+
+const hlL = hlR.clone();
+hlL.position.z = -0.95;
+cabinGroup.add(hlL);
+
+// Headlight Projector Beams
+const spotR = new THREE.SpotLight(0xfffaec, 5.0, 28, Math.PI / 7, 0.4);
+spotR.position.set(5.6, 1.3, 0.95);
+spotR.target.position.set(20, 0.2, 0.95);
+scene.add(spotR);
+scene.add(spotR.target);
+
+const spotL = new THREE.SpotLight(0xfffaec, 5.0, 28, Math.PI / 7, 0.4);
+spotL.position.set(5.6, 1.3, -0.95);
+spotL.target.position.set(20, 0.2, -0.95);
+scene.add(spotL);
+scene.add(spotL.target);
+
+// Side Mirrors
+function makeMirror(zSign) {
+  const mGroup = new THREE.Group();
+  const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.6), darkMetalMat);
+  arm.rotation.x = (Math.PI / 2) * zSign;
+  mGroup.add(arm);
+  const head = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.6, 0.14), accentPaintMat);
+  head.position.set(0.05, 0.1, 0.35 * zSign);
+  head.castShadow = true;
+  mGroup.add(head);
+  const mirrorGlass = new THREE.Mesh(new THREE.PlaneGeometry(0.14, 0.52), chromeMat);
+  mirrorGlass.rotation.y = (-Math.PI / 2) * zSign;
+  mirrorGlass.position.set(-0.05, 0.1, 0.35 * zSign);
+  mGroup.add(mirrorGlass);
+  return mGroup;
+}
+const mirR = makeMirror(1);
+mirR.position.set(0.9, 1.85, 1.25);
+cabinGroup.add(mirR);
+
+const mirL = makeMirror(-1);
+mirL.position.set(0.9, 1.85, -1.25);
+cabinGroup.add(mirL);
+
+// Vertical Exhaust Stacks
+const exhR = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 2.7, 16), chromeMat);
+exhR.position.set(-1.3, 2.55, 1.08);
+exhR.castShadow = true;
+cabinGroup.add(exhR);
+
+const exhL = exhR.clone();
+exhL.position.z = -1.08;
+cabinGroup.add(exhL);
+
+truckBody.add(cabinGroup);
+
+// 3. Detailed Cargo Freight Container
+const containerGroup = new THREE.Group();
+containerGroup.position.set(-2.0, 0.95, 0);
+
+const containerBox = new THREE.Mesh(new THREE.BoxGeometry(8.0, 3.2, 2.5), cargoMat);
+containerBox.position.set(0, 1.7, 0);
+containerBox.castShadow = true;
+containerBox.receiveShadow = true;
+containerGroup.add(containerBox);
+
+// Container Corrugation Ribs
+for (let r = -3.8; r <= 3.8; r += 0.5) {
+  const ribR = new THREE.Mesh(new THREE.BoxGeometry(0.06, 3.0, 0.05), cargoMat);
+  ribR.position.set(r, 1.7, 1.26);
+  containerGroup.add(ribR);
+
+  const ribL = ribR.clone();
+  ribL.position.z = -1.26;
+  containerGroup.add(ribL);
+}
+
+const frameTop = new THREE.Mesh(new THREE.BoxGeometry(8.05, 0.15, 2.54), darkMetalMat);
+frameTop.position.set(0, 3.32, 0);
+containerGroup.add(frameTop);
+
+const frameBot = new THREE.Mesh(new THREE.BoxGeometry(8.05, 0.15, 2.54), darkMetalMat);
+frameBot.position.set(0, 0.08, 0);
+containerGroup.add(frameBot);
+
+// Rear Trailer Door Lock Bars
+const bar1 = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 3.0), chromeMat);
+bar1.position.set(-4.02, 1.7, 0.4);
+containerGroup.add(bar1);
+const bar2 = bar1.clone();
+bar2.position.z = -0.4;
+containerGroup.add(bar2);
+
+truckBody.add(containerGroup);
+
+// 4. Wheels & Steer Axles
+const steerWheels = [];
+const allWheels = [];
+const wheelPositions = [
+  { x: 4.3, y: 0.58, z: 1.15, isSteer: true },
+  { x: 4.3, y: 0.58, z: -1.15, isSteer: true },
+  { x: 1.8, y: 0.58, z: 1.15, isSteer: false },
+  { x: 1.8, y: 0.58, z: -1.15, isSteer: false },
+  { x: 0.6, y: 0.58, z: 1.15, isSteer: false },
+  { x: 0.6, y: 0.58, z: -1.15, isSteer: false },
+  { x: -3.8, y: 0.58, z: 1.15, isSteer: false },
+  { x: -3.8, y: 0.58, z: -1.15, isSteer: false },
+  { x: -5.0, y: 0.58, z: 1.15, isSteer: false },
+  { x: -5.0, y: 0.58, z: -1.15, isSteer: false },
+];
+
+function createDetailedWheel() {
+  const wGroup = new THREE.Group();
+  const tire = new THREE.Mesh(new THREE.CylinderGeometry(0.58, 0.58, 0.42, 32), tireMat);
+  tire.rotation.x = Math.PI / 2;
+  tire.castShadow = true;
+  wGroup.add(tire);
+
+  const rim = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 0.44, 24), chromeMat);
+  rim.rotation.x = Math.PI / 2;
+  rim.castShadow = true;
+  wGroup.add(rim);
+
+  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.46, 16), darkMetalMat);
+  hub.rotation.x = Math.PI / 2;
+  wGroup.add(hub);
+
+  for (let i = 0; i < 6; i++) {
+    const ang = (i / 6) * Math.PI * 2;
+    const nut = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.47, 8), chromeMat);
+    nut.position.set(Math.cos(ang) * 0.28, Math.sin(ang) * 0.28, 0);
+    nut.rotation.x = Math.PI / 2;
+    wGroup.add(nut);
+  }
+  return wGroup;
+}
+
+wheelPositions.forEach((pos) => {
+  const mount = new THREE.Group();
+  mount.position.set(pos.x, pos.y, pos.z);
+  const wMesh = createDetailedWheel();
+  mount.add(wMesh);
+  truckBody.add(mount);
+
+  allWheels.push(wMesh);
+  if (pos.isSteer) {
+    steerWheels.push(mount);
+  }
+});
+
+// -------------------------------------------------------------
+// 3D CARTOON VOLUMETRIC SMOKE BURST PARTICLES
+// -------------------------------------------------------------
+const smokeGroup = new THREE.Group();
+scene.add(smokeGroup);
+
+const puffGeo = new THREE.IcosahedronGeometry(1.0, 3);
+const smokeMat = new THREE.MeshStandardMaterial({
+  color: 0xf6f8fc,
+  roughness: 0.94,
+  metalness: 0.0,
+  emissive: 0x222a36,
+  emissiveIntensity: 0.32,
+  transparent: true,
+  opacity: 0.0,
+});
+
+const smokePuffs = [];
+const NUM_PUFFS = 220;
+
+for (let i = 0; i < NUM_PUFFS; i++) {
+  const pMesh = new THREE.Mesh(puffGeo, smokeMat.clone());
+  
+  // Dispersion velocity (spherical & directional explosion outward)
+  const theta = Math.random() * Math.PI * 2;
+  const phi = (Math.random() - 0.2) * Math.PI;
+  const speed = 7.0 + Math.random() * 16.0;
+
+  const vel = new THREE.Vector3(
+    Math.cos(theta) * Math.cos(phi) * speed,
+    Math.abs(Math.sin(phi)) * speed * 1.15 + 1.2,
+    Math.sin(theta) * Math.cos(phi) * speed
+  );
+
+  // Distributed along drift skid marks and truck body
+  const startX = (Math.random() - 0.5) * 7.5;
+  const startY = 0.3 + Math.random() * 2.2;
+  const startZ = (Math.random() - 0.5) * 4.5;
+
+  pMesh.position.set(startX, startY, startZ);
+  pMesh.scale.set(0.001, 0.001, 0.001);
+  pMesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+
+  smokeGroup.add(pMesh);
+
+  smokePuffs.push({
+    mesh: pMesh,
+    origin: new THREE.Vector3(startX, startY, startZ),
+    vel: vel,
+    targetScale: 5.5 + Math.random() * 8.5,
+    rotSpeed: new THREE.Vector3((Math.random() - 0.5) * 3, (Math.random() - 0.5) * 3, (Math.random() - 0.5) * 3),
+    spawnDelay: 2.5 + Math.random() * 0.45, // Bursts promptly at 2.5s - 2.95s
+    growthSpeed: 3.2 + Math.random() * 2.8, // Ultra rapid expansion < 2s
+  });
+}
+
+// -------------------------------------------------------------
+// EXACT 5.0-SECOND TIMELINE & CHOREOGRAPHY
+// 0.0 - 1.5s: Rapid entry from OFF-SCREEN LEFT (-30) to near center (-3.5)
+// 1.5 - 2.5s: Controlled dynamic DRIFT (rear swings out yaw ~0.36 rad, body rolls, counter-steer)
+//             + deliberate cinematic BUFFER / hesitation (short 0.25s pause in forward progression at 2.1-2.35s)
+// 2.5 - 3.0s: Reaches exact CENTER (0.0) with a powerful DRAMATIC HARD STOP & suspension squash
+//             + IMMEDIATE huge 3D cartoon smoke burst
+// 3.0 - 4.8s: Smoke rapidly expands outward in all directions (< 2s total duration)
+// 4.8 - 5.0s: Entire frame 100% engulfed in dense white/light-gray stylized clouds
+// -------------------------------------------------------------
+
+const START_X = -32.0;
+const PRE_DRIFT_X = -4.5;
+const STOP_X = 0.0;
+
+const clock = new THREE.Clock();
+let animTime = 0;
+
+function animate() {
+  requestAnimationFrame(animate);
+
+  const delta = clock.getDelta();
+  animTime += delta;
+
+  // Exact 5.0s loop cycle
+  const t = animTime % 5.0;
+
+  // 1. TRUCK KINEMATICS & DRIFT PHYSICS
+  if (t < 1.5) {
+    // 0.0 - 1.5s: Rapid straight entry
+    const p = t / 1.5;
+    // Cubic power in
+    const eased = Math.pow(p, 1.25);
+    truckRoot.position.x = START_X + (PRE_DRIFT_X - START_X) * eased;
+    truckRoot.position.z = 0;
+    truckRoot.rotation.y = 0;
+
+    // Road suspension vibration
+    truckBody.position.y = Math.sin(t * 36) * 0.03;
+    truckBody.rotation.z = -0.012; // Forward tilt from acceleration
+    truckBody.rotation.x = 0;
+
+    // Steer neutral
+    steerWheels.forEach(sw => sw.rotation.y = 0);
+
+    // Wheels rotating fast
+    const roll = 26.0 * delta;
+    allWheels.forEach(w => w.rotation.z -= roll);
+
+  } else if (t >= 1.5 && t < 2.5) {
+    // 1.5 - 2.5s: DRIFT & DELIBERATE CINEMATIC BUFFER PAUSE
+    const driftT = (t - 1.5) / 1.0; // 0 -> 1
+
+    // Forward motion with deliberate cinematic buffer/stutter at 2.15s - 2.4s (driftT 0.65 to 0.9)
+    let forwardProgress;
+    if (driftT < 0.65) {
+      forwardProgress = (driftT / 0.65) * 0.7;
+    } else if (driftT >= 0.65 && driftT < 0.88) {
+      // Deliberate cinematic buffer / hesitation pause (gathering kinetic energy before snapping to center)
+      forwardProgress = 0.7 + Math.sin((driftT - 0.65) * Math.PI * 4.0) * 0.015;
+    } else {
+      // Release from buffer into hard stop approach
+      forwardProgress = 0.7 + ((driftT - 0.88) / 0.12) * 0.3;
+    }
+
+    truckRoot.position.x = PRE_DRIFT_X + (STOP_X - PRE_DRIFT_X) * forwardProgress;
+
+    // Controlled drift yaw: rear swings outward (Z+), truck angle points toward viewer/travel
+    const driftAngle = Math.sin(driftT * Math.PI * 0.95) * 0.38; // ~22 degrees drift angle
+    truckRoot.rotation.y = driftAngle;
+    truckRoot.position.z = Math.sin(driftT * Math.PI) * 0.85;
+
+    // Centrifugal body roll: tilts outward along X-axis
+    truckBody.rotation.x = Math.sin(driftT * Math.PI) * 0.08;
+    truckBody.position.y = Math.sin(t * 40) * 0.04;
+
+    // Counter-steering wheels into the slide
+    const counterSteer = -Math.sin(driftT * Math.PI) * 0.45;
+    steerWheels.forEach(sw => sw.rotation.y = counterSteer);
+
+    // Wheels continue spinning during drift slide
+    const roll = 20.0 * delta * (1.0 - driftT * 0.3);
+    allWheels.forEach(w => w.rotation.z -= roll);
+
+  } else if (t >= 2.5 && t < 3.2) {
+    // 2.5 - 3.2s: HARD STOP IMPACT & INERTIA SQUASH
+    truckRoot.position.x = STOP_X;
+    truckRoot.position.z = 0;
+    truckRoot.rotation.y = 0;
+    steerWheels.forEach(sw => sw.rotation.y = 0);
+
+    const stopT = (t - 2.5) / 0.7;
+    // Front suspension nosedive compression
+    const nosedive = Math.sin(stopT * Math.PI) * Math.exp(-stopT * 4.0);
+    truckBody.rotation.z = -nosedive * 0.1;
+    truckBody.rotation.x = 0;
+    truckBody.position.y = -nosedive * 0.08;
+
+    // Wheels dead stop with tiny skid roll
+    const brakeRoll = Math.max(0, 1.0 - stopT * 3.0);
+    allWheels.forEach(w => w.rotation.z -= brakeRoll * 4.0 * delta);
+
+  } else {
+    // 3.2 - 5.0s: Stationary at center while smoke engulfs
+    truckRoot.position.set(STOP_X, 0, 0);
+    truckRoot.rotation.set(0, 0, 0);
+    truckBody.position.set(0, 0, 0);
+    truckBody.rotation.set(0, 0, 0);
+    steerWheels.forEach(sw => sw.rotation.y = 0);
+  }
+
+  // Update headlights tracking truck root
+  spotR.position.x = truckRoot.position.x + 5.6;
+  spotR.position.z = truckRoot.position.z + 0.95;
+  spotR.target.position.x = truckRoot.position.x + 18.0;
+  spotR.target.position.z = truckRoot.position.z + 0.95;
+
+  spotL.position.x = truckRoot.position.x + 5.6;
+  spotL.position.z = truckRoot.position.z - 0.95;
+  spotL.target.position.x = truckRoot.position.x + 18.0;
+  spotL.target.position.z = truckRoot.position.z - 0.95;
+
+  // 2. ULTRA-RAPID 3D CARTOON VOLUMETRIC SMOKE BURST (< 2 SECONDS TOTAL DURATION)
+  smokePuffs.forEach(p => {
+    if (t < p.spawnDelay) {
+      p.mesh.scale.set(0.001, 0.001, 0.001);
+      p.mesh.material.opacity = 0;
+    } else {
+      const age = t - p.spawnDelay;
+
+      // Billowing expansion trajectory
+      p.mesh.position.x = p.origin.x + p.vel.x * age * 0.9;
+      p.mesh.position.y = p.origin.y + p.vel.y * age * 0.85;
+      p.mesh.position.z = p.origin.z + p.vel.z * age * 0.9;
+
+      // Swirling rotation
+      p.mesh.rotation.x += p.rotSpeed.x * delta;
+      p.mesh.rotation.y += p.rotSpeed.y * delta;
+      p.mesh.rotation.z += p.rotSpeed.z * delta;
+
+      // Rapid explosive scale (< 2s total duration from 2.5s to 4.8s)
+      let scale = p.targetScale * Math.min(1.0, age * p.growthSpeed);
+
+      // By 3.8s to 4.8s: Exponential full screen engulfment factor
+      if (t >= 3.6) {
+        const fillFactor = 1.0 + Math.pow((t - 3.6) / 1.2, 2.5) * 6.5;
+        scale *= fillFactor;
+      }
+
+      p.mesh.scale.set(scale, scale * 0.95, scale);
+
+      // Thick cartoon opacity ramping quickly to full coverage
+      const opacity = Math.min(1.0, age * 4.2);
+      p.mesh.material.opacity = opacity;
+
+      // Bright white / clean atmospheric tint
+      if (t >= 4.2) {
+        p.mesh.material.color.setHex(0xfbfcfe);
+      }
+    }
+  });
+
+  // 3. CINEMATIC CAMERA WORK & IMPACT SHAKE
+  if (t < 1.5) {
+    // Stable cinematic tracking
+    camera.position.set(2.0, 3.6, 15.0);
+    camera.lookAt(0, 1.4, 0);
+  } else if (t >= 1.5 && t < 2.5) {
+    // Subtle cinematic camera drift tracking
+    const driftCam = Math.sin((t - 1.5) * Math.PI) * 0.35;
+    camera.position.set(2.0 + driftCam * 0.4, 3.6 - driftCam * 0.1, 15.0 - driftCam * 0.3);
+    camera.lookAt(0.5 * driftCam, 1.4, 0);
+  } else if (t >= 2.5 && t < 3.2) {
+    // Dramatic impact rumble on hard stop
+    const shakeTime = t - 2.5;
+    const impactShake = Math.sin(shakeTime * 45.0) * 0.15 * Math.exp(-shakeTime * 4.5);
+    camera.position.set(2.0 + impactShake * 0.9, 3.6 + impactShake, 15.0 + impactShake * 0.6);
+    camera.lookAt(0, 1.4, 0);
+  } else {
+    // Screen enveloped by smoke
+    camera.position.set(2.0, 3.6, 15.0);
+    camera.lookAt(0, 1.4, 0);
+  }
+
+  renderer.render(scene, camera);
+}
+
+animate();
+
+// Resize handling
+window.addEventListener('resize', () => {
+  const newWidth = container.clientWidth || window.innerWidth;
+  const newHeight = container.clientHeight || window.innerHeight;
+  camera.aspect = newWidth / newHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(newWidth, newHeight);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_3 -->
+</body></html>
