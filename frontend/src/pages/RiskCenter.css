@@ -503,3 +503,622 @@
       display: none;
     }
   }
+  /* =========================================================
+   LOGIX INTELLIGENCE COMMAND PANEL
+   ========================================================= */
+
+.hadoop-intelligence-panel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+  border: 1px solid #dfe5ef;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(20, 32, 51, 0.05);
+}
+
+.hadoop-intelligence-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #536fd8;
+}
+
+.hadoop-intelligence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.hadoop-intelligence-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.hadoop-intelligence-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #536fd8;
+}
+
+.hadoop-intelligence-title h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #172033;
+}
+
+.hadoop-intelligence-title p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #8b96a8;
+}
+
+.hadoop-engine-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid #dcebe2;
+  border-radius: 20px;
+  background: #f4fbf7;
+  color: #25895a;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.hadoop-engine-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #35b779;
+  box-shadow: 0 0 7px rgba(53, 183, 121, 0.55);
+}
+
+.hadoop-intelligence-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hadoop-intelligence-stat {
+  padding: 13px 14px;
+  background: #ffffff;
+  border: 1px solid #e7ebf1;
+  border-radius: 10px;
+}
+
+.hadoop-intelligence-stat span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  color: #8d98a9;
+}
+
+.hadoop-intelligence-stat strong {
+  display: block;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 800;
+  color: #172033;
+}
+
+.hadoop-intelligence-stat small {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  color: #9ba5b4;
+}
+
+.hadoop-stat-danger strong {
+  color: #c44242;
+}
+
+.hadoop-stat-warning strong {
+  color: #a87400;
+}
+
+.hadoop-stat-success strong {
+  color: #238957;
+}
+
+.hadoop-intelligence-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #edf0f4;
+}
+
+.hadoop-intelligence-footer span {
+  font-size: 10px;
+  color: #8994a6;
+}
+
+.hadoop-intelligence-footer strong {
+  color: #536fd8;
+  font-weight: 750;
+}
+
+@media (max-width: 1050px) {
+  .hadoop-intelligence-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 750px) {
+  .hadoop-intelligence-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hadoop-intelligence-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hadoop-intelligence-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .hadoop-intelligence-stats {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   EXPLAINABLE RISK ENGINE
+   ========================================================= */
+
+.explainable-risk-panel {
+  margin-bottom: 20px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(20, 32, 51, 0.04);
+}
+
+.explainable-risk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.explainable-risk-title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.explainable-risk-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #536fd8;
+}
+
+.explainable-risk-title h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #172033;
+}
+
+.explainable-risk-title p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #8b96a8;
+}
+
+.explainable-risk-badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #f1f4ff;
+  color: #536fd8;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+}
+
+.explainable-risk-content {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 24px;
+}
+
+.explainable-risk-score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background: #f8faff;
+  border: 1px solid #e5eaf3;
+  border-radius: 12px;
+}
+
+.explainable-risk-score-label {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  color: #8994a6;
+}
+
+.explainable-risk-score-value {
+  margin: 8px 0;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 850;
+  color: #172033;
+}
+
+.explainable-risk-score-value span {
+  font-size: 17px;
+  font-weight: 500;
+  color: #8a95a6;
+}
+
+.explainable-risk-score-description {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #697589;
+}
+
+.explainable-risk-factors {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.explainable-risk-factor {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 12px;
+}
+
+.explainable-risk-factor-name {
+  font-size: 11px;
+  font-weight: 650;
+  color: #52627a;
+}
+
+.explainable-risk-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0f5;
+}
+
+.explainable-risk-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #536fd8;
+  transition: width 0.5s ease;
+}
+
+.explainable-risk-factor-value {
+  text-align: right;
+  font-size: 11px;
+  font-weight: 800;
+  color: #536fd8;
+}
+
+.explainable-risk-signal {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid #f0dfb4;
+  border-radius: 10px;
+  background: #fffaf0;
+}
+
+.explainable-risk-signal strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #a87400;
+}
+
+.explainable-risk-signal p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #697589;
+}
+
+.explainable-risk-action {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid #dcebe2;
+  border-radius: 10px;
+  background: #f4fbf7;
+}
+
+.explainable-risk-action strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #25895a;
+}
+
+.explainable-risk-action p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #697589;
+}
+
+@media (max-width: 850px) {
+  .explainable-risk-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .explainable-risk-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .explainable-risk-factor {
+    grid-template-columns: 115px minmax(0, 1fr) 42px;
+    gap: 8px;
+  }
+}
+
+
+
+/* =========================================================
+   ROUTE INTELLIGENCE
+   ========================================================= */
+
+.route-intelligence-panel {
+  margin-top: 24px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #dbe5f2;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 30px rgba(15, 35, 65, 0.08),
+    0 2px 8px rgba(15, 35, 65, 0.04);
+  animation: routeIntelligenceIn 0.3s ease;
+}
+
+@keyframes routeIntelligenceIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-intelligence-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e6edf6;
+}
+
+.route-intelligence-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #2563eb;
+}
+
+.route-intelligence-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #10213f;
+}
+
+.route-intelligence-header p {
+  margin: 7px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.route-intelligence-close {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #dbe5f2;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.route-intelligence-close:hover {
+  background: #f1f5f9;
+  color: #10213f;
+  border-color: #c5d3e5;
+}
+
+.route-intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.route-intelligence-card {
+  min-width: 0;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e3ebf5;
+  border-radius: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.route-intelligence-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 35, 65, 0.07);
+}
+
+.route-intelligence-card span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #7a8aa3;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.route-intelligence-card strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #14294d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.route-intelligence-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.route-intelligence-performance {
+  padding: 18px;
+  background: #f8fafc;
+  border: 1px solid #e5ebf3;
+  border-radius: 14px;
+}
+
+.route-intelligence-section-title {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #243b61;
+}
+
+.route-intelligence-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8eef5;
+}
+
+.route-intelligence-status:last-child {
+  border-bottom: none;
+}
+
+.route-intelligence-status span {
+  font-size: 13px;
+  color: #687991;
+}
+
+.route-intelligence-status strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: #14294d;
+}
+
+.route-intelligence-no-data {
+  padding: 12px 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Make risk priority rows feel interactive */
+.risk-item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.risk-item:hover {
+  background: #f8fbff;
+  transform: translateX(3px);
+}
+
+.risk-item:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+@media (max-width: 1100px) {
+  .route-intelligence-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .route-intelligence-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-intelligence-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .route-intelligence-panel {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .route-intelligence-grid {
+    grid-template-columns: 1fr;
+  }
+}

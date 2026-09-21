@@ -4,12 +4,15 @@ from pydantic import BaseModel
 from typing import Optional
 import pandas as pd
 import io
+from app.hadoop_api import router as hadoop_router
 
 app = FastAPI(
     title="LOGIX API",
     description="Intelligent Transportation & Logistics Big Data Platform",
     version="1.0.0"
 )
+
+app.include_router(hadoop_router)
 
 # Allow React frontend to communicate with FastAPI
 app.add_middleware(

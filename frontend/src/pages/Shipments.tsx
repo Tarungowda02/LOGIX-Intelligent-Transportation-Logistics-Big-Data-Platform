@@ -47,7 +47,7 @@ function Shipments() {
 
   useEffect(() => {
 
-    fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/shipments')
+    fetch('/api/shipments')
 
       .then((response) => {
 

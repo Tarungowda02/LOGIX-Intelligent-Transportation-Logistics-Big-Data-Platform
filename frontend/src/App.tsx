@@ -26,6 +26,7 @@ import Analytics from './pages/Analytics'
 import RiskCenter from './pages/RiskCenter'
 import Simulator from './pages/Simulator'
 import SystemSettings from './pages/SystemSettings'
+import RouteIntelligence from './pages/RouteIntelligence'
 import './App.css'
 
 
@@ -138,7 +139,7 @@ function Dashboard() {
 
   useEffect(() => {
 
-    fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/dashboard')
+    fetch('/api/dashboard')
 
       .then((response) => {
 
@@ -894,6 +895,9 @@ function App() {
   const [activePage, setActivePage] =
     useState('Dashboard')
 
+  const [selectedRouteId, setSelectedRouteId] =
+    useState<string | null>(null)
+
 
   return (
 
@@ -1062,8 +1066,19 @@ function App() {
         )}
 
 
-        {activePage === 'Risk Center' && (
-          <RiskCenter />
+        {activePage === 'Risk Center' && !selectedRouteId && (
+          <RiskCenter
+            onRouteSelect={(routeId) => {
+              setSelectedRouteId(routeId)
+            }}
+          />
+        )}
+
+        {activePage === 'Risk Center' && selectedRouteId && (
+          <RouteIntelligence
+            routeId={selectedRouteId}
+            onBack={() => setSelectedRouteId(null)}
+          />
         )}
 
 

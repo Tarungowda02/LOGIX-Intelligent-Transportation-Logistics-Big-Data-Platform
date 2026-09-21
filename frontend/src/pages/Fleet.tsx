@@ -46,7 +46,7 @@ function Fleet() {
 
   useEffect(() => {
 
-    fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/fleet')
+    fetch('/api/fleet')
 
       .then((response) => {
 

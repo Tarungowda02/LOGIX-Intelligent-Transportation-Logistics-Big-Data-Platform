@@ -63,9 +63,9 @@ export default function Analytics() {
 
         const [dashboardResponse, shipmentsResponse, routesResponse] =
           await Promise.all([
-            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/dashboard'),
-            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/shipments'),
-            fetch('https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/routes'),
+            fetch('/api/dashboard'),
+            fetch('/api/shipments'),
+            fetch('/api/routes'),
           ])
 
         if (

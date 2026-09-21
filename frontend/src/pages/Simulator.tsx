@@ -30,7 +30,7 @@ export default function Simulator() {
       setError('')
 
       const response = await fetch(
-        'https://estimate-participation-sleep-extraordinary.trycloudflare.com/api/simulator',
+        '/api/simulator',
         {
           method: 'POST',
           headers: {
