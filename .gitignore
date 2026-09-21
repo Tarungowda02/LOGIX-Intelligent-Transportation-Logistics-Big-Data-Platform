@@ -30,3 +30,8 @@ data/processed/*
 .vscode/
 .idea/
 
+
+# Hadoop generated files
+hadoop/output/
+hadoop/mapreduce/*.jar
+hadoop/mapreduce/*.class
