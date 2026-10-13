@@ -898,8 +898,27 @@ function App() {
   const [selectedRouteId, setSelectedRouteId] =
     useState<string | null>(null)
 
+  const [showIntro, setShowIntro] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowIntro(false)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
+    <>
+      {showIntro && (
+        <div className="logix-intro">
+          <iframe
+            src="/intro.html"
+            title="LOGIX Cinematic Intro"
+            className="logix-intro-frame"
+          />
+        </div>
+      )}
 
     <div className="app-shell">
 
@@ -1093,6 +1112,7 @@ function App() {
 
     </div>
 
+    </>
   )
 }
 
